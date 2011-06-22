@@ -1,0 +1,92 @@
+#summary Examples of use
+#labels Featured
+
+= Replace Example =
+
+  # Create a new text file and call it "replace-demo.xml"
+ 
+  # Add the minimum required xml structure
+{{{
+<modification>
+	<id>Replace ABC with 123</id>
+	<version>1.0</version>
+	<vqmver>1.0.8</vqmver>
+	<author>xxx</author>
+	<file name="path/to/myfile.php">
+		<operation>
+			<search position="replace"><![CDATA[
+			$var = 'ABC';
+			]]></search>
+			<add><![CDATA[
+			$var = '123';
+			]]></add>
+		</operation>
+	</file>
+</modification>
+}}}
+
+*Output*
+{{{$var = '123';}}}
+
+
+
+= Before Example =
+
+  # Create a new text file and call it "before-demo.xml"
+ 
+  # Add the minimum required xml structure
+{{{
+<modification>
+	<id>Before ABC, add 123</id>
+	<version>1.0</version>
+	<vqmver>1.0.8</vqmver>
+	<author>xxx</author>
+	<file name="path/to/myfile.php">
+		<operation>
+			<search position="before"><![CDATA[
+			$var = 'ABC';
+			]]></search>
+			<add><![CDATA[
+			$var = '123';
+			]]></add>
+		</operation>
+	</file>
+</modification>
+}}}
+
+*Output*
+{{{
+$var = '123';
+$var = 'ABC';
+}}}
+
+
+= After Example =
+
+  # Create a new text file and call it "after-demo.xml"
+ 
+  # Add the minimum required xml structure
+{{{
+<modification>
+	<id>After ABC, add 123</id>
+	<version>1.0</version>
+	<vqmver>1.0.8</vqmver>
+	<author>xxx</author>
+	<file name="path/to/myfile.php">
+		<operation>
+			<search position="after"><![CDATA[
+			$var = 'ABC';
+			]]></search>
+			<add><![CDATA[
+			$var = '123';
+			]]></add>
+		</operation>
+	</file>
+</modification>
+}}}
+
+*Output*
+{{{
+$var = 'ABC';
+$var = '123';
+}}}
