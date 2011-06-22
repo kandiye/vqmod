@@ -1,4 +1,5 @@
 #summary Explains the script format
+#labels Featured
 
 = How to make vQmod Scripts =
 
