@@ -1,5 +1,5 @@
 #summary What is vQmod?
-#labels Phase-Requirements
+#labels Featured
 
 = What is vQmod? =
 
