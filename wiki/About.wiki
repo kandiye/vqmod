@@ -1,0 +1,25 @@
+#summary What is vQmod?
+#labels Phase-Requirements
+
+= What is vQmod? =
+
+vQmod™ (aka virtualQmod) gives the ability to create modification override "scripts" for included files in a controller-based web application.
+
+
+= How does it work? =
+
+Instead of modifying actual files to add custom modifications, source files are parsed "on-the-fly" right before any of the follow functions are called:
+
+  * include()
+  * include_once()
+  * require()
+  * require_once()
+
+The source is then cloned to a temp file and modifications read from an external script file are made to that temp file. The temp file is then substituted for the real file in the include path. Now the modification is in place while the original file has not actually been altered. Remove the script file and the original source is loaded.
+
+
+= Other Details =
+
+  * The vQmod class is currently written in PHP and the script files are xml based, but the concept could be ported to any language and parsers could be created for any format.
+
+  * Currently, OpenCart is the only fully tested and working platform that vQmod works with, but this is a concept that can work for other projects and platforms that are controller-based.
