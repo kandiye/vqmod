@@ -1,0 +1,110 @@
+#summary Explains the script format
+
+= How to make vQmod Scripts =
+
+vQmod currently uses an xml formatted parser by default but other parsers can be created in the future as well.
+
+A simple replace script example looks like this:
+{{{
+<modification>
+	<id>Replace 123 with ABC</id>
+	<version>1.0.0</version>
+	<vqmver>1.0.9</vqmver>
+	<author>qphoria</author>
+	
+	<file name="relative/path/myfile.php">
+		<operation>
+		
+			<search position="replace"><![CDATA[
+			$var = '123';
+			]]></search>
+			
+			<add><![CDATA[
+			$var = 'ABC';
+			]]></add>
+			
+		</operation>
+	</file>	
+</modification>
+}}}
+This script simply changes the value of a variable of "myfile.php" from "123" to "ABC" before it gets included.
+
+
+
+= Syntax =
+
+vQmod supports a number of parameters:
+
+*modification*
+  * This is the highest level of the file and there can only be one
+
+*modification / id*
+  * This is the name and description of the mod.
+  * Format: Free form text. (Informational)
+
+*modification / version*
+  * This is the version of the mod.
+  * Format: Number and Decimal (1.0.0) (Informational)
+
+*modification / vqmver*
+  * This is the minimum required version of VirtualQMod needed for the script to work.
+  * Format: Number and Decimal (1.0.0) (Informational)
+
+*modification / author*
+  * This is the author of the mod.
+  * Format: Free form text (Informational)
+
+*modification / file*
+  * This is the name of the file to modify.
+  * Requires attribute "name" as relative filename to the location of the main index.php file (e.g. catalog/controller/product/product.php).
+  * There can be multiple file tags in a single xml file. Each file can have its own set of operations
+
+*modification / file / operation*
+  * This is the wrapper of the actual operation occuring.
+  * There can be multiple operations to the same _file_ tag.
+  * Optional attribute "error" set to skip|abort
+    * _skip_ means all other operations will be applied even if one cannot.
+    * _abort_ means to revert to the original source. (default)
+
+*modification / file / operation / search*
+  * This is the first required step of the operation.
+  * Can only search one line!
+  * Automatically trims whitespace and linebreaks
+  * One per _operation_ tag
+  * Recommended to use CDATA tags to wrap code.
+  * Required attribute "position" set to before|after|replace|top|bottom|all.
+      * _replace_ will replace the data in the _search_ tag with the data in the _add_ tag. (default)
+      * _before_ will insert the _add_ data before the _search_ data
+      * _after_ will insert the _add_ data after the _search_ data
+      * _top_ will insert the _add_ data at the top of the file. The _search_ data is ignored.
+      * _bottom_ will insert the _add_ data at the bottom of the file. The _search_ data is ignored.
+      * _all_ will completely replace all the code in the file with the _add_ data. The _search_ data is ignored.
+  *  Optional attribute "offset" to work with the position
+      * if the search position is before and offset 3 it will put the _add_ data before the line, 3 lines above the searched line
+      * if the search position is after and offset 3 it will put the _add_ data after the line, 3 lines below the searched line
+      * if the search position is replace and offset 3 it will remove the code from the search line and the next 3 lines and replace it with the _add_ data
+      * if the search position is top and offset 3 it will put the code before the line, 3 lines below the top of the file
+      * if the search position is bottom and offset 3 it will put the code after the line, 3 lines above the bottom of the file
+  * Optional attribute "index" for specifying which instances of a search tag should be acted on
+      * If the search string is "echo" and there are 5 echos in the file, but only want to replace the 1st and 3rd, use index="1,3"
+      * Comma delimited for multiple instances starting with "1"
+      * Leave out or set to FALSE to replace all instances. (default)
+  * Optional attribute "regex" for specifying whether or not to search a regex pattern.
+      * If true, the _search_ data should be a valid regex pattern
+      * Leave out or set to FALSE to use normal string search (default)
+  * Optional attribute "trim" set to true|false
+      * true will trim away whitespace and linebreaks.
+      * leave out or set to true to trim. (default is true)
+
+*modification / file / operation / add*
+  * This is the second required step of the operation.
+  * Can be multiple lines
+  * One per operation.
+  * Location of added data depends on the position attribute of the _search_ command.
+  * Use CDATA tags to wrap code.
+  * Optional attribute "trim" set to true|false
+      * true will trim away whitespace and linebreaks.
+      * leave out or set to false to not trim. (default is false)
+
+*`<![CDATA[  ]]>`*
+  * These are called CDATA tags and they are used by xml to specify that the data between should not be evaluated.
