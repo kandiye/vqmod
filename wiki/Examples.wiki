@@ -1,7 +1,7 @@
 #summary Examples of use
 #labels Featured
 
-= Replace Example =
+= 'Replace' Example =
 
   # Create a new text file and call it "replace-demo.xml"
  
@@ -30,7 +30,7 @@
 
 
 
-= Before Example =
+= 'Before' Example =
 
   # Create a new text file and call it "before-demo.xml"
  
@@ -61,7 +61,7 @@ $var = 'ABC';
 }}}
 
 
-= After Example =
+= 'After' Example =
 
   # Create a new text file and call it "after-demo.xml"
  
