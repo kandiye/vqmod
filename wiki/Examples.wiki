@@ -1,5 +1,6 @@
 #summary Examples of use
 #labels Featured
+#sidebar TableOfContents
 
 = 'Replace' Example =
 
