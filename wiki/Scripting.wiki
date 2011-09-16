@@ -64,8 +64,9 @@ vQmod supports a number of parameters:
   * This is the wrapper of the actual operation occuring.
   * There can be multiple operations to the same _file_ tag.
   * Optional attribute "error" set to skip|abort
-    * _skip_ means all other operations will be applied even if one cannot.
-    * _abort_ means to revert to the original source. (default)
+    * _skip_ means all other operations will be applied even if one cannot. There will be no error in the log.
+    * _log_ is the same as skip, but logs the error. (default)
+    * _abort_ means to log the error and revert to the original source. (default)
 
 *modification / file / operation / search*
   * This is the first required step of the operation.
