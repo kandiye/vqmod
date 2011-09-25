@@ -1,0 +1,30 @@
+#labels install,opencart
+#How to install vQmod on OpenCart
+
+
+= Installing on OpenCart=
+
+vQmod works on both OpenCart 1.4.x and 1.5.x
+
+
+
+= How to install =
+
+  # Download the latest version that has "opencart" in the title from 
+    * http://code.google.com/p/vqmod
+  # Using FTP, upload the "vqmod" folder from the zip to the root of your opencart store.
+  # Be sure the vqmod folder and the vqmod/vqcache folders are writable (either 755 or 777). 
+    * Also be sure index.php and admin/index.php are writable.
+      * If not sure which you need, first try 755. 
+      * If you get errors about permissions, then try 777.
+  # Goto http://www.yoursite.com/vqmod/install 
+  # You should get a success message. If not, check permissions above and try again
+  # Load your store homepage and verify it works.
+  # Using FTP, verify that there are new "vq" files in the "vqmod/vqcache" folder.
+  # If yes, then you are ready to start downloading or creating vQmod scripts, otherwise ask for assistance.
+Done!
+
+
+  * *DO NOT DELETE THE INSTALL FOLDER!*
+  * *YOU MUST RUN THE INSTALLER EVERY TIME YOU UPGRADE OPENCART!!*
+  * *THERE IS NO DANGER OF RE-RUNNING THE INSTALLER!*
