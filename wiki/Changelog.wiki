@@ -1,8 +1,8 @@
 #summary vQmod Change Log
 #labels Featured,Changelog,History
 
-HISTORY:
-============
+== HISTORY ==
+
 v2.1 - 2011-SEP-20 - Jay@jaygilford.com
   * Missing referenced source files now log to file instead of die
   * Small tweaks
