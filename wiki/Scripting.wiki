@@ -57,7 +57,7 @@ vQmod supports a number of parameters:
 
 *modification / file*
   * This is the name of the file to modify.
-  * Requires attribute "name" as relative filename to the location of the main index.php file (e.g. catalog/controller/product/product.php). Name attribute supports a wildcard ({{{*}}}) character for dynamic path building. each wildcard is limited to a single directory level.
+  * Requires attribute "name" as relative filename to the location of the main index.php file (e.g. catalog/controller/product/product.php). Name attribute supports a wildcard ({{{*}}}) character for dynamic path building. Each wildcard is limited to a single directory level.
 {{{
      - catalog/view/theme/*/template/product/product.tpl
      - catalog/view/theme/*/*/product/product.tpl
