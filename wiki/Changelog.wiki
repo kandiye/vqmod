@@ -3,7 +3,7 @@
 
 == HISTORY ==
 
-v2.1 - 2011-SEP-20 - Jay@jaygilford.com
+v2.0.1 - 2011-SEP-20 - Jay@jaygilford.com
   * Missing referenced source files now log to file instead of die
   * Small tweaks
 
