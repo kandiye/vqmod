@@ -3,7 +3,7 @@
 
 == HISTORY ==
 
-v2.0.2 - 2011-SEP-28 - Jay@jaygilford.com
+v2.1 - 2011-SEP-28 - Jay@jaygilford.com
   * Added wildcard support for filenames
   * Added back support for vqprotect.txt file
   * Added full commenting to the vqmod class
