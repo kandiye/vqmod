@@ -6,7 +6,9 @@
 v2.1 - 2011-SEP-28 - Jay@jaygilford.com
   * Added wildcard support for filenames
   * Added back support for vqprotect.txt file
+  * Added vqprotect.txt file
   * Added full commenting to the vqmod class
+  * Added template fetch fix in vqmod_opencart.xml
 
 v2.0.1 - 2011-SEP-20 - Jay@jaygilford.com
   * Missing referenced source files now log to file instead of die
