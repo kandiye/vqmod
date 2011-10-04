@@ -2,6 +2,9 @@
 #labels Featured,Changelog,History
 
 == HISTORY ==
+v2.1.1 - 2011-OCT-04 - Jay@jaygilford.com
+  *Fixed inefficent regex bug
+  *Fixed controller bug for opencart xml
 
 v2.1 - 2011-SEP-28 - Jay@jaygilford.com
   * Added wildcard support for filenames
