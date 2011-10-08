@@ -66,11 +66,11 @@ vQmod supports a number of parameters:
   * There can be multiple file tags in a single xml file. Each file can have its own set of operations
 
 *modification / file / operation*
-  * This is the wrapper of the actual operation occuring.
+  * This is the wrapper of the actual operation occurring.
   * There can be multiple operations to the same _file_ tag.
-  * Optional attribute "error" set to skip|abort
+  * Optional attribute "error" set to skip|log|abort
     * _skip_ means all other operations will be applied even if one cannot. There will be no error in the log.
-    * _log_ is the same as skip, but logs the error. (default)
+    * _log_ is the same as skip, but logs the error.
     * _abort_ means to log the error and revert to the original source. (default)
 
 *modification / file / operation / search*
@@ -114,4 +114,4 @@ vQmod supports a number of parameters:
       * leave out or set to false to not trim. (default is false)
 
 *`<![CDATA[  ]]>`*
-  * These are called CDATA tags and they are used by xml to specify that the data between should not be evaluated.
+  * These are called CDATA tags and they are used by xml to specify that the data between should not be evaluated. It's recommended you always use these for data between the search and add operation tags
