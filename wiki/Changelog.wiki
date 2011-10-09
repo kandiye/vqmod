@@ -4,7 +4,7 @@
 == HISTORY ==
 v2.1.2 - 2011-OCT-09 - Jay@jaygilford.com
   * Fixed position="bottom" always returning 0
-  * Fixed VQModObject::_skip not functioning
+  * Fixed VQModObject::`_`skip not functioning
   * Fixed vqprotect.txt trying to load when it doesn't exist
   * Removed: vqprotect.txt file
 
