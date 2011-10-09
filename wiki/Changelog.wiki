@@ -2,6 +2,12 @@
 #labels Featured,Changelog,History
 
 == HISTORY ==
+v2.1.2 - 2011-OCT-09 - Jay@jaygilford.com
+  * Fixed position="bottom" always returning 0
+  * Fixed VQModObject::_skip not functioning
+  * Fixed vqprotect.txt trying to load when it doesn't exist
+  * Removed: vqprotect.txt file
+
 v2.1.1 - 2011-OCT-04 - Jay@jaygilford.com
   * Fixed inefficent regex bug
   * Fixed controller bug for opencart xml
