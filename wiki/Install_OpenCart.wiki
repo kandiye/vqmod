@@ -8,7 +8,7 @@ vQmod works on both OpenCart 1.4.x and 1.5.x
 
 
 
-= How to install =
+= How to install using Autoinstaller =
 
   # Download the latest version that has "opencart" in the title from 
     * http://code.google.com/p/vqmod
@@ -28,3 +28,76 @@ Done!
   * *DO NOT DELETE THE INSTALL FOLDER!*
   * *YOU MUST RUN THE INSTALLER EVERY TIME YOU UPGRADE OPENCART!!*
   * *THERE IS NO DANGER OF RE-RUNNING THE INSTALLER!*
+
+
+= How to install Manually =
+
+  # Download the latest version that has "opencart" in the title from 
+    * http://code.google.com/p/vqmod
+  # Using FTP, upload the "vqmod" folder from the zip to the root of your opencart store.
+  # Be sure the vqmod folder and the vqmod/vqcache folders are writable (either 755 or 777). 
+    * Also be sure index.php and admin/index.php are writable.
+      * If not sure which you need, first try 755. 
+      * If you get errors about permissions, then try 777.
+  # Edit your *index.php* file
+  # FIND:
+{{{
+// Startup
+require_once(DIR_SYSTEM . 'startup.php');
+
+// Application Classes
+require_once(DIR_SYSTEM . 'library/customer.php'));
+require_once(DIR_SYSTEM . 'library/currency.php');
+require_once(DIR_SYSTEM . 'library/tax.php');
+require_once(DIR_SYSTEM . 'library/weight.php');
+require_once(DIR_SYSTEM . 'library/length.php');
+require_once(DIR_SYSTEM . 'library/cart.php');
+}}}
+  # REPLACE WITH:
+{{{
+// vQmod
+require_once('./vqmod/vqmod.php');
+$vqmod = new VQMod();
+
+// VQMODDED Startup
+require_once($vqmod->modCheck(DIR_SYSTEM . 'startup.php'));
+
+// Application Classes
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/customer.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/currency.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/tax.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/weight.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/length.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/cart.php'));
+}}}
+  # Edit your *admin/index.php* file
+  # FIND:
+{{{
+// Startup
+require_once(DIR_SYSTEM . 'startup.php');
+
+// Application Classes
+require_once(DIR_SYSTEM . 'library/currency.php');
+require_once(DIR_SYSTEM . 'library/user.php'));
+require_once(DIR_SYSTEM . 'library/weight.php');
+require_once(DIR_SYSTEM . 'library/length.php');
+}}}
+  # REPLACE WITH:
+{{{
+// vQmod
+require_once('../vqmod/vqmod.php');
+$vqmod = new VQMod();
+
+// VQMODDED Startup
+require_once($vqmod->modCheck(DIR_SYSTEM . 'startup.php'));
+
+// Application Classes
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/currency.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/user.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/weight.php'));
+require_once($vqmod->modCheck(DIR_SYSTEM . 'library/length.php'));
+}}}
+  # Load your store homepage and verify it works.
+  # Using FTP, verify that there are new "vq" files in the "vqmod/vqcache" folder.
+  # If yes, then you are ready to start downloading or creating vQmod scripts, otherwise ask for assistance.
+Done!
