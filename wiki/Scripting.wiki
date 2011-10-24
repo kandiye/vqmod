@@ -7,6 +7,7 @@ vQmod currently uses an xml formatted parser by default but other parsers can be
 
 A simple replace script example looks like this:
 {{{
+<?xml version="1.0" encoding="UTF-8"?>
 <modification>
 	<id>Replace 123 with ABC</id>
 	<version>1.0.0</version>
