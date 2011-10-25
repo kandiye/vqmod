@@ -1,7 +1,7 @@
 #summary How to setup useCache for vQmod.
 #labels usecache
 
-= Introduction =
+= About useCache =
 
 vQmod was designed to load, patch, and substitute files on the fly. This happens extremely quickly but when dealing with high-traffic sites, it is possible that multiple pages loading at the same time will both try to patch the files at the same time. This can cause occasional errors.
 
