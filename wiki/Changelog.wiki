@@ -2,6 +2,13 @@
 #labels Featured,Changelog,History
 
 == HISTORY ==
+
+v2.1.4 - 2011-OCT-28 - Jay@jaygilford.com
+  * Added flock to read and write methods, to hopefully eliminate possible locked file problems
+
+v2.1.3 - 2011-OCT-16 - Jay@jaygilford.com
+  * Fixed useCache accidentally taken out when adding in wildcard support
+
 v2.1.2 - 2011-OCT-09 - Jay@jaygilford.com
   * Fixed position="bottom" always returning 0
   * Fixed VQModObject::`_`skip not functioning
