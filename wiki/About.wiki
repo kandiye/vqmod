@@ -29,4 +29,4 @@ The source is then cloned to a temp file and modifications read from an external
 vQmod relies on a controller based system that has a series of files that are linked and extended. There are some files that cannot be used with vQmod.
   * index.php - since this is the main file of the site, it has to load vQmod first for it to work on other pages. So you can't put the cart in front of the horse.
   * Standalone files - Files that are just standalone and don't extend or have no hierarchy will not work with vQmod. vQmod works by intercepting the "include" functions. So if file isn't being included or required, then it cannot be vQmodded
-  * css & js files - These files are rendered at the browser level, not at the server level, so vQmod has no effect on these. You can, however, create new files and use vQmod to alter the tpl files to point to these new css/js files.
+  * css & js files - These files are rendered at the browser level, not at the server level, so vQmod has no effect on these. You can, however, create new files and use vQmod to alter the tpl files to point to these new css/js files. Or you can put <style> and <script> tags directly into the tpl file.
