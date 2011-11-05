@@ -1,0 +1,18 @@
+#summary How to upgrade vQmod to a new version
+#labels vQmod,upgrade
+
+= Introduction =
+
+This explains the process of upgrading vQmod to a newer version.
+
+
+= How to Upgrade vQmod =
+
+  # Download the latest version (either standalone or opencart)
+  # Unzip ONLY the "_vqmod/vqmod.php_" file
+  # Upload that file to the _vqmod_ folder on your site, overwriting the one you currently have installed.
+
+That's it!
+
+You do *NOT* need to run the vQmod installer again for upgrade
+You only need to run the installer if you've upgraded your site code and overwrote the index.php and admin/index.php files
