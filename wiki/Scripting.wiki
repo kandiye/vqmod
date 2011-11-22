@@ -1,6 +1,13 @@
 #summary Explains the script format
 #labels Featured
 
+= The Golden Rules =
+First things to set in your mind...
+  # The *{{{<search>}}}* tag can only be a single line. You will learn how to use the _offset_ attribute to properly encompass all needed lines
+  # Less is more! Whenever possible, try to match the smallest, yet still unique part of the code. That will improve the chances of being more future-resistant and avoid breaking other mods that may have changes close to yours.
+  # Pay attention to all the attribute options for each tag. There is a lot of power that is overlooked by people skimming over the syntax
+
+
 = How to make vQmod Scripts =
 
 vQmod currently uses an xml formatted parser by default but other parsers can be created in the future as well.
