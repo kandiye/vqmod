@@ -12,7 +12,7 @@ class VQModLog {
 
 	/**
 	 * VQModLog::__construct()
-	 *
+	 * 
 	 * @param VQMod $vqmod VQMod main class as reference
 	 * @return null
 	 * @description Object instantiation method
@@ -24,7 +24,7 @@ class VQModLog {
 
 	/**
 	 * VQModLog::__destruct()
-	 *
+	 * 
 	 * @return null
 	 * @description Logs any messages to the log file just before object is destroyed
 	 */
@@ -75,7 +75,7 @@ class VQModLog {
 
 	/**
 	 * VQModLog::write()
-	 *
+	 * 
 	 * @param string $data Text to be added to log file
 	 * @param VQModObject $obj Modification the error belongs to
 	 * @return null
@@ -117,7 +117,7 @@ class VQModObject {
 
 	/**
 	 * VQModObject::__construct()
-	 *
+	 * 
 	 * @param DOMNode $node <modification> node
 	 * @param string $modFile File modification is from
 	 * @param VQMod $vqmod VQMod object as reference
@@ -141,7 +141,7 @@ class VQModObject {
 
 	/**
 	 * VQModObject::skip()
-	 *
+	 * 
 	 * @return bool
 	 * @description Returns the skip status of a modification
 	 */
@@ -151,11 +151,11 @@ class VQModObject {
 
 	/**
 	 * VQModObject::applyMod()
-	 *
+	 * 
 	 * @param array $mods Array of search add nodes
 	 * @param string $data File contents to be altered
 	 * @return null
-	 * @description Applies all modifications to the text data
+	 * @description Applies all modifications to the text data 
 	 */
 	public function applyMod($mods, &$data) {
 		if($this->_skip) return;
@@ -264,7 +264,7 @@ class VQModObject {
 
 	/**
 	 * VQModObject::_parseMods()
-	 *
+	 * 
 	 * @param DOMNode $node <modification> node to be parsed
 	 * @return null
 	 * @description Parses modifications in preparation for the applyMod method to work
@@ -275,7 +275,7 @@ class VQModObject {
 		foreach($files as $file) {
 			$fileToMod = $file->getAttribute('name');
 			$fullPath = $this->_vqmod->path($fileToMod);
-
+						
 			if(!$fullPath){
 				if(strpos($fileToMod, '*') !== false) {
 					$fullPath = $this->_vqmod->getCwd() . $fileToMod;
@@ -290,7 +290,7 @@ class VQModObject {
 			foreach($operations as $operation) {
 
 				$error = ($operation->hasAttribute('error')) ? $operation->getAttribute('error') : 'abort';
-
+				
 				$this->mods[$fullPath][] = array(
 					'search' 		=> new VQSearchNode($operation->getElementsByTagName('search')->item(0)),
 					'add' 			=> new VQAddNode($operation->getElementsByTagName('add')->item(0)),
@@ -302,7 +302,7 @@ class VQModObject {
 
 	/**
 	 * VQModObject::_explodeData()
-	 *
+	 * 
 	 * @param string $data File contents
 	 * @return string
 	 * @description Splits a file into an array of individual lines
@@ -313,7 +313,7 @@ class VQModObject {
 
 	/**
 	 * VQModObject::_implodeData()
-	 *
+	 * 
 	 * @param array $data Array of lines
 	 * @return string
 	 * @description Joins an array of lines back into a text file
@@ -334,7 +334,7 @@ class VQNode {
 
 	/**
 	 * VQNode::__construct()
-	 *
+	 * 
 	 * @param DOMNode $node Search/add node
 	 * @return null
 	 * @description Parses the node attributes and sets the node property
@@ -354,7 +354,7 @@ class VQNode {
 
 	/**
 	 * VQNode::getContent()
-	 *
+	 * 
 	 * @return string
 	 * @description Returns the content, trimmed if applicable
 	 */
@@ -377,7 +377,7 @@ class VQSearchNode extends VQNode {
 
 	/**
 	 * VQSearchNode::indexes()
-	 *
+	 * 
 	 * @return bool, array
 	 * @description Returns the index values to use the search on, or false if none
 	 */
@@ -415,7 +415,7 @@ final class VQMod {
 	public $logging = true;
 	public $log;
 
-	private $_vqversion = '2.1.5';
+	private $_vqversion = '2.1.2';
 	private $_modFileList = array();
 	private $_mods = array();
 	private $_filesModded = array();
@@ -425,7 +425,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::__construct()
-	 *
+	 * 
 	 * @param bool $path File path to use
 	 * @param bool $logging Enable/disabled logging
 	 * @return null
@@ -450,7 +450,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::modCheck()
-	 *
+	 * 
 	 * @param string $sourceFile path for file
 	 * @return string
 	 * @description Checks if a file has modifications and applies them, returning cache files or the file name
@@ -466,22 +466,18 @@ final class VQMod {
 		if(!$sourcePath || is_dir($sourcePath) || in_array($sourcePath, $this->_doNotMod)) {
 			return $sourceFile;
 		}
-
+		
 		$stripped_filename = preg_replace('~^' . preg_quote($this->getCwd(), '~') . '~', '', $sourcePath);
 		$cacheFile = $this->_cacheName($stripped_filename);
-
-		if($this->useCache && file_exists($cacheFile)) {
-			return $cacheFile;
-		}
 
 		if(isset($this->_filesModded[$sourcePath])) {
 			return $this->_filesModded[$sourcePath]['cached'] ? $cacheFile : $sourceFile;
 		}
-
+		
 		$changed = false;
 		$fileHash = sha1_file($sourcePath);
 		$fileData = file_get_contents($sourcePath);
-
+		
 		foreach($this->_mods as $modObject) {
 			foreach($modObject->mods as $path => $mods) {
 				if($this->_checkMatch($path, $sourcePath)) {
@@ -490,36 +486,21 @@ final class VQMod {
 			}
 		}
 
-		// START QPHORIA CACHELOCK CODE
-		if (sha1($fileData) != $fileHash) {
-			$writePath = $this->_virtualMode ?  $cacheFile : $sourcePath;
-			$cacheLock = false;
-			if ($this->_virtualMode && file_exists($writePath) && ((filemtime($writePath) + 3) >= time())) { $cacheLock = true; $changed = true; }
-			if(!$cacheLock && (!file_exists($writePath) || is_writable($writePath))) {
-				file_put_contents($writePath, $fileData);
-				$changed = true;
-			} else {
-				//file_put_contents('./cachelock.txt', "$writePath \r\n", FILE_APPEND);
-			}
-			//file_put_contents('./cachetotal.txt', "$writePath \r\n", FILE_APPEND);
-		} // END QPHORIA CACHELOCK CODE
-
-		/* Original Code
 		if(sha1($fileData) != $fileHash) {
 			$writePath = $this->_virtualMode ?  $cacheFile : $sourcePath;
 			if(!file_exists($writePath) || is_writable($writePath)) {
 				file_put_contents($writePath, $fileData);
 				$changed = true;
 			}
-		}*/
-
+		}
+		
 		$this->_filesModded[$sourcePath] = array('cached' => $changed);
 		return $changed ? $writePath : $sourcePath;
 	}
 
 	/**
 	 * VQMod::path()
-	 *
+	 * 
 	 * @param string $path File path
 	 * @param bool $skip_real If true path is full not relative
 	 * @return bool, string
@@ -536,12 +517,12 @@ final class VQMod {
 		}
 		return $realpath;
 	}
-
+	
 	/**
 	 * VQMod::getCwd()
-	 *
+	 * 
 	 * @return string
-	 * @description Returns current working directory
+	 * @description Returns current working directory 
 	 */
 	public function getCwd() {
 		return $this->_cwd;
@@ -549,7 +530,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::_getMods()
-	 *
+	 * 
 	 * @return null
 	 * @description Gets list of XML files in vqmod xml folder for processing
 	 */
@@ -566,7 +547,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::_parseMods()
-	 *
+	 * 
 	 * @return null
 	 * @description Loops through xml files and attempts to load them as VQModObject's
 	 */
@@ -586,10 +567,10 @@ final class VQMod {
 			}
 		}
 	}
-
+	
 	/**
 	 * VQMod::_loadProtected()
-	 *
+	 * 
 	 * @return null
 	 * @description Loads protected list and adds them to _doNotMod array
 	 */
@@ -612,7 +593,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::_cacheName()
-	 *
+	 * 
 	 * @param string $file Filename to be converted to cache filename
 	 * @return string
 	 * @description Returns cache file name for a path
@@ -623,7 +604,7 @@ final class VQMod {
 
 	/**
 	 * VQMod::_setCwd()
-	 *
+	 * 
 	 * @param string $path Path to be used as current working directory
 	 * @return null
 	 * @description Sets the current working directory variable
@@ -635,10 +616,10 @@ final class VQMod {
 		}
 		$this->_cwd = rtrim($realpath, DIRECTORY_SEPARATOR) . DIRECTORY_SEPARATOR;
 	}
-
+	
 	/**
 	 * VQMod::_checkMatch()
-	 *
+	 * 
 	 * @param string $modFilePath Modification path from a <file> node
 	 * @param string $checkFilePath File path
 	 * @return bool
@@ -647,7 +628,7 @@ final class VQMod {
 	private function _checkMatch($modFilePath, $checkFilePath) {
 		$modFilePath = str_replace('\\', '/', $modFilePath);
 		$checkFilePath = str_replace('\\', '/', $checkFilePath);
-
+		
 		$modFilePath = preg_replace('/([^*]+)/e', 'preg_quote("$1", "~")', $modFilePath);
 		$modFilePath = str_replace('*', '[^/]*', $modFilePath);
 		$return = (bool) preg_match('~^' . $modFilePath . '$~', $checkFilePath);
