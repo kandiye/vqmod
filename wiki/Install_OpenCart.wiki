@@ -1,8 +1,12 @@
-#labels install,opencart
+#labels install,opencart,vqmod
 #How to install vQmod on OpenCart
 
 
-= Installing on OpenCart=
+= New Install Video Tutorial =
+<wiki:video url="http://youtu.be/0b45NLHO8K0"/>
+
+
+= Installing on OpenCart =
 
 vQmod works on both OpenCart 1.4.x and 1.5.x
 
