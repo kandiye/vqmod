@@ -3,7 +3,7 @@
 
 
 = New Install Video Tutorial =
-<wiki:video url="http://youtu.be/0b45NLHO8K0"/>
+<wiki:video url="http://www.youtube.com/watch?v=0b45NLHO8K0"/>
 
 
 = Installing on OpenCart =
