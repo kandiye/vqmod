@@ -80,7 +80,7 @@ vQmod supports a number of parameters:
     * _skip_ means it will simply ignore this file.
     * _log_ is the same as skip, but logs the error. (default)
     * _abort_ means to log the error and cancel the remaining operations in that particular xml script. It does not revert changes to other files already made in that script and doesn't stop other xml files.
-    * _Wildcard paths will ignore the "error" attribute completely_
+    * *Wildcard paths will ignore the "error" attribute completely*
 
 *modification / file / operation*
   * This is the wrapper of the actual operation occurring.
