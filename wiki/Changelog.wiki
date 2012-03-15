@@ -3,6 +3,10 @@
 
 = HISTORY =
 
+===v2.1.6 - 2012-MAR-15 - Qphoria@gmail.com===
+  * Added "error" attribute to the <file> tag
+  * Moved main vQmod class to the top of the file to make version number easier to find
+
 ===v2.1.5 - 2011-NOV-10 - Qphoria@gmail.com===
   * Prevent excessive ajax callbacks from constant rewriting of vqcache files
 
