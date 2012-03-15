@@ -78,7 +78,7 @@ vQmod supports a number of parameters:
   * There can be multiple file tags in a single xml file. Each file can have its own set of operations
   * Optional attribute "error" set to log|skip|abort
     * _skip_ means it will simply ignore this file.
-    * _log_ is the same as skip, but logs the error. (default)
+    * _log_ is the same as skip, but logs the error. *(default)*
     * _abort_ means to log the error and cancel the remaining operations in that particular xml script. It does not revert changes to other files already made in that script and doesn't stop other xml files.
     * *Wildcard paths will ignore the "error" attribute completely*
 
@@ -88,7 +88,7 @@ vQmod supports a number of parameters:
   * Optional attribute "error" set to skip|log|abort
     * _skip_ means all other operations will be applied even if one cannot. There will be no error in the log.
     * _log_ is the same as skip, but logs the error.
-    * _abort_ means to log the error and revert to the original source. (default)
+    * _abort_ means to log the error and revert to the original source. *(default)*
 
 *modification / file / operation / search*
   * This is the first required step of the operation.
