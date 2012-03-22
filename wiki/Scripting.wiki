@@ -92,7 +92,7 @@ vQmod supports a number of parameters:
 
 *modification / file / operation / search*
   * This is the first required step of the operation.
-  * Can only search single lines, both fully and partially. But _offset_ and _index_ attributes will assist.
+  * <font color="#ff0000"><b>Can only search single lines</b></font>, both fully and partially. But _offset_ and _index_ attributes will assist.
   * Automatically trims whitespace and linebreaks
   * One per _operation_ tag
   * Recommended to use CDATA tags to wrap code.
