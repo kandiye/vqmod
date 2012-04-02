@@ -10,7 +10,7 @@ This also happens in the case where there are a lot of ajax callbacks at the sam
 ~~We are looking at better ways to get around this, but the quick solution is to enable useCache.~~
 
 As of v2.1.5 we've added a pseudo-cache feature that basically caches a file for 3 seconds. This means that within the same 3 secs, if another page load tries to reload that same file, it will use the cached version. This will likely be made configurable in the future so that you could use something like:
-`$vqmod->useCache(3600);`
+`$vqmod->useCache = 3600;`
 which would force it to use the same version for one hour.
 For now, it is either on of off.
 
