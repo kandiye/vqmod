@@ -5,7 +5,6 @@
 = 'Replace' Example =
 
   # Create a new text file and call it "replace-demo.xml"
- 
   # Add the minimum required xml structure
 {{{
 <modification>
@@ -34,7 +33,6 @@
 = 'Before' Example =
 
   # Create a new text file and call it "before-demo.xml"
- 
   # Add the minimum required xml structure
 {{{
 <modification>
@@ -65,7 +63,6 @@ $var = 'ABC';
 = 'After' Example =
 
   # Create a new text file and call it "after-demo.xml"
- 
   # Add the minimum required xml structure
 {{{
 <modification>
@@ -91,3 +88,44 @@ $var = 'ABC';
 $var = 'ABC';
 $var = '123';
 }}}
+
+
+= 'Multi-line Replace' Example =
+
+*Input*
+{{{
+public function index() {
+
+    $a = rand();
+    $b = rand();
+    if ($a == $b) {
+        echo 'oh noes';
+    }
+}
+}}}
+
+  # Create a new text file and call it "multi-replace-demo.xml"
+  # Add the minimum required xml structure
+  # To replace multiple lines we use the "offset" attribute with replace. Count the number of total lines to replace and subtract one as the main line is already covered by the replace command. In this example, there are 8 lines of code, so offset would be 7.
+
+{{{
+<modification>
+	<id>Replace many lines with one</id>
+	<version>1.0</version>
+	<vqmver>1.0.8</vqmver>
+	<author>xxx</author>
+	<file name="path/to/myfile.php">
+		<operation>
+			<search position="replace" offset="7"><![CDATA[
+			public function index() {
+			]]></search>
+			<add><![CDATA[
+			$var = '123';
+			]]></add>
+		</operation>
+	</file>
+</modification>
+}}}
+
+*Output*
+{{{$var = '123';}}}
