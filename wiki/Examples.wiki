@@ -118,6 +118,8 @@ $var = '123';
 
 = 'Multi-line Replace' Example =
 
+vQmod is limited to a single-line search, but you can use the "offset" attribute to blindly blanket additional lines of code in the replace.
+
   # Create a new text file and call it "multi-replace-demo.xml"
   # Add the minimum required xml structure
   # To replace multiple lines we use the "offset" attribute with replace. Count the number of total lines to replace and subtract one as the main line is already covered by the replace command. In this example, there are 8 lines of code, so offset would be 7.
