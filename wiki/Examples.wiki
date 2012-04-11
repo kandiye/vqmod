@@ -131,6 +131,7 @@ public function index() {
 	$b = rand();
 	if ($a == $b) {
 		echo 'oh noes';
+		return false;
 	}
 }
 }}}
