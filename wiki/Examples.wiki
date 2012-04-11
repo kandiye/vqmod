@@ -2,10 +2,18 @@
 #labels Featured
 #sidebar TableOfContents
 
+
 = 'Replace' Example =
 
   # Create a new text file and call it "replace-demo.xml"
   # Add the minimum required xml structure
+
+*Input*
+{{{
+$var = 'ABC';
+}}}
+
+*Script*
 {{{
 <modification>
 	<id>Replace ABC with 123</id>
@@ -26,7 +34,9 @@
 }}}
 
 *Output*
-{{{$var = '123';}}}
+{{{
+$var = '123';
+}}}
 
 
 
@@ -34,6 +44,13 @@
 
   # Create a new text file and call it "before-demo.xml"
   # Add the minimum required xml structure
+
+*Input*
+{{{
+$var = 'ABC';
+}}}
+
+*Script*
 {{{
 <modification>
 	<id>Before ABC, add 123</id>
@@ -60,10 +77,18 @@ $var = 'ABC';
 }}}
 
 
+
 = 'After' Example =
 
   # Create a new text file and call it "after-demo.xml"
   # Add the minimum required xml structure
+
+*Input*
+{{{
+$var = 'ABC';
+}}}
+
+*Script*
 {{{
 <modification>
 	<id>After ABC, add 123</id>
@@ -90,24 +115,25 @@ $var = '123';
 }}}
 
 
+
 = 'Multi-line Replace' Example =
-
-*Input*
-{{{
-public function index() {
-
-    $a = rand();
-    $b = rand();
-    if ($a == $b) {
-        echo 'oh noes';
-    }
-}
-}}}
 
   # Create a new text file and call it "multi-replace-demo.xml"
   # Add the minimum required xml structure
   # To replace multiple lines we use the "offset" attribute with replace. Count the number of total lines to replace and subtract one as the main line is already covered by the replace command. In this example, there are 8 lines of code, so offset would be 7.
 
+*Input*
+{{{
+public function index() {
+	$a = rand();
+	$b = rand();
+	if ($a == $b) {
+		echo 'oh noes';
+	}
+}
+}}}
+
+*Script*
 {{{
 <modification>
 	<id>Replace many lines with one</id>
@@ -120,7 +146,11 @@ public function index() {
 			public function index() {
 			]]></search>
 			<add><![CDATA[
-			$var = '123';
+			public function index($arr = array()) {
+				foreach ($arr as $a) {
+					echo $a;
+    				}
+			}
 			]]></add>
 		</operation>
 	</file>
@@ -128,4 +158,18 @@ public function index() {
 }}}
 
 *Output*
-{{{$var = '123';}}}
+{{{
+public function index($arr = array()) {
+	foreach ($arr as $a) {
+		echo $a;
+    	}
+}
+
+
+
+
+
+
+
+}}}
+_Note there are still 7 blank lines. The offset clears the extra 7 lines of code from the input, but the replaced code is added in place of the initial line. So there will be 7 extra spaces after the new code, but it will not affect the code functionality, only the look of the vqcache file which is of no importance._
