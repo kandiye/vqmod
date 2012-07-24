@@ -3,7 +3,7 @@
 
 
 = New Install Video Tutorial =
-Coming back soon...
+http://www.opencartvideos.com/content/installing-vqmod-opencart
 
 = Installing on OpenCart =
 
