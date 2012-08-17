@@ -3,7 +3,9 @@
 
 = About useCache =
 
-vQmod was designed to load, patch, and substitute files on the fly. This happens extremely quickly but when dealing with high-traffic sites, it is possible that multiple pages loading at the same time will both try to patch the files at the same time. This can cause occasional errors.
+useCache was removed as of v2.1.7 and replaced with [http://code.google.com/p/vqmod/wiki/cacheTime cacheTime]
+
+<s>vQmod was designed to load, patch, and substitute files on the fly. This happens extremely quickly but when dealing with high-traffic sites, it is possible that multiple pages loading at the same time will both try to patch the files at the same time. This can cause occasional errors.
 
 This also happens in the case where there are a lot of ajax callbacks at the same time. Ajax callbacks fire at a much faster rate as they only load bits of the page. But the full rewrite of the files still triggers.
 
@@ -33,4 +35,4 @@ useCache will force vQmod to reuse the previously generated version of the new s
 
 When using useCache, you must keep the following in mind
   * Since the substitution files are now only loaded if they don't already exist, when you add or change an xml script, you need to blow away all the files inside the vqcache folder so that the new changes can be generated the first time. Otherwise, you may not see the changes that a script has made because it is using the cached version of the changes.
-  * If you upgrade your index files on your site, you will need to re-add this change.
+  * If you upgrade your index files on your site, you will need to re-add this change.</s>
