@@ -1,0 +1,26 @@
+#summary Setting the default rewrite time of the cache files
+
+= What is cacheTime? =
+
+Older versions of vQmod had a feature called "useCache" that would force vQmod vqcache files to always be reused and only generate them if they didn't exist. This was done initially to improve performance, even though performance wasn't really much of an issue.
+
+The problem is that when you add a new mod that changes a file that already has a vqcache file, the new mod wouldn't be picked up until you deleted the vqcache file first. This becomes a nuisance when people can't figure out why mods aren't working on their site.
+
+So useCache was removed in v2.1.7 and replaced by a configurable finite timeout. Now vqcache files are regenerated after the cacheTime has expired.
+
+This allows the best of performance improvements as well as dynamic regeneration for new mods.
+
+= Usage =
+
+By default, vQmod is set for 60 secs. This should be more than enough for everyone and you should not ever have to adjust this.
+
+But if you want to adjust it, you can add the following to your index.php file, under the line
+{{{
+$vqmod = new VQMod();
+}}}
+
+So it looks like this:
+{{{
+$vqmod = new VQMod();
+$vqmod->cacheTime = 300; //seconds
+}}}
