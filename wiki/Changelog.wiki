@@ -3,6 +3,11 @@
 
 = HISTORY =
 
+===v2.1.7 - 2012-AUG-16 - Qphoria@gmail.com===
+  * Updated xml/vqmod_opencart.xml file to support OpenCart v1.5.4.
+  * Added new "$cacheTime" variable with default of 60 secs
+  * Deprecated "$useCache"
+
 ===v2.1.6 - 2012-MAR-15 - Qphoria@gmail.com===
   * Added "error" attribute to the {{{<file>}}} tag
   * Moved main vQmod class to the top of the file to make version number easier to find
