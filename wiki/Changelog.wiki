@@ -3,6 +3,16 @@
 
 = HISTORY =
 
+===v2.2.0 - 2012-OCT-28 - Jay@jaygilford.com===
+ * Removed cache lock code and implemented file modification detection
+ * Added folder checks for vqcache and logs folder
+ * Added rotational daily logs to curb large log file sizes
+ * Added file being modded to log messages to make easier to debug
+ * Fixed cache bug from 2.1.7
+ * Added modifications caching to increase performance
+ * Added cache path caching to increase performance
+ * OpenCart Installer now checks files are writeable and notifies of any issues before attempting write
+
 ===v2.1.7 - 2012-AUG-16 - Qphoria@gmail.com===
   * Updated xml/vqmod_opencart.xml file to support OpenCart v1.5.4.
   * Added new "$cacheTime" variable with default of 60 secs
