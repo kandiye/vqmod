@@ -1,4 +1,5 @@
 #summary Setting the default rewrite time of the cache files
+#labels Deprecated
 
 cacheTime removed as of v2.1.8
 
