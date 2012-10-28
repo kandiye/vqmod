@@ -1,11 +1,13 @@
 #summary How to setup useCache for vQmod.
 #labels usecache
 
+useCache removed as of v2.1.7
+
+<s>
+
 = About useCache =
 
-useCache was removed as of v2.1.7 and replaced with [http://code.google.com/p/vqmod/wiki/cacheTime cacheTime]
-
-<s>vQmod was designed to load, patch, and substitute files on the fly. This happens extremely quickly but when dealing with high-traffic sites, it is possible that multiple pages loading at the same time will both try to patch the files at the same time. This can cause occasional errors.
+vQmod was designed to load, patch, and substitute files on the fly. This happens extremely quickly but when dealing with high-traffic sites, it is possible that multiple pages loading at the same time will both try to patch the files at the same time. This can cause occasional errors.
 
 This also happens in the case where there are a lot of ajax callbacks at the same time. Ajax callbacks fire at a much faster rate as they only load bits of the page. But the full rewrite of the files still triggers.
 
