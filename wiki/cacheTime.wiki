@@ -1,5 +1,8 @@
 #summary Setting the default rewrite time of the cache files
 
+cacheTime removed as of v2.1.8
+
+<s>
 = What is cacheTime? =
 
 Older versions of vQmod had a feature called "useCache" that would force vQmod vqcache files to always be reused and only generate them if they didn't exist. This was done initially to improve performance, even though performance wasn't really much of an issue.
@@ -24,3 +27,4 @@ So it looks like this:
 $vqmod = new VQMod();
 $vqmod->cacheTime = 300; //seconds
 }}}
+</s>
