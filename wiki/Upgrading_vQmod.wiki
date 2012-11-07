@@ -8,9 +8,9 @@ This explains the process of upgrading vQmod to a newer version.
 
 = How to Upgrade vQmod =
 
-  # Download the latest version (either standalone or opencart)
-  # Unzip ONLY the "_vqmod/vqmod.php_" file
-  # Upload that file to the _vqmod_ folder on your site, overwriting the one you currently have installed.
+  # Download the latest version (use the opencart version if using opencart)
+  # Unzip ONLY the "ENTIRE" _vqmod_ folder
+  # Upload that folder to the _vqmod_ folder on your site, overwriting the one you currently have installed. Do NOT drop the new folder on top of the current vqmod folder. Instead, drop the new folder on the scrollbar of your ftp client while currently in the root directory of your store. All files in the 2 folders will merge, and the new files will overwrite the old files. But all your existing xml files will be safe.
 
 That's it!
 
