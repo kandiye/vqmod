@@ -3,6 +3,12 @@
 
 = HISTORY =
 
+===v2.2.1 - 2012-NOV-12 - Jay@jaygilford.com===
+ * Fixed invalid file path issue
+ * Fixed empty search content issue
+ * Added file change detection in original files
+ * Fixed 1.4.X compatibility in XML for OpenCart
+
 ===v2.2.0 - 2012-OCT-28 - Jay@jaygilford.com===
  * Removed cache lock code and implemented file modification detection
  * Added folder checks for vqcache and logs folder
