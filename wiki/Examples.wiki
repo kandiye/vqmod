@@ -15,6 +15,7 @@ $var = 'ABC';
 
 *Script*
 {{{
+<?xml version="1.0" encoding="UTF-8"?>
 <modification>
 	<id>Replace ABC with 123</id>
 	<version>1.0</version>
@@ -52,6 +53,7 @@ $var = 'ABC';
 
 *Script*
 {{{
+<?xml version="1.0" encoding="UTF-8"?>
 <modification>
 	<id>Before ABC, add 123</id>
 	<version>1.0</version>
@@ -90,6 +92,7 @@ $var = 'ABC';
 
 *Script*
 {{{
+<?xml version="1.0" encoding="UTF-8"?>
 <modification>
 	<id>After ABC, add 123</id>
 	<version>1.0</version>
@@ -138,6 +141,7 @@ public function index() {
 
 *Script*
 {{{
+<?xml version="1.0" encoding="UTF-8"?>
 <modification>
 	<id>Replace many lines with one</id>
 	<version>1.0</version>
