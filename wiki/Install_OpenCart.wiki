@@ -2,7 +2,7 @@
 #How to install vQmod on OpenCart
 
 
-= New Install Video Tutorial =
+= New Install Video Tutorial (OpenCart) =
 <wiki:video url="http://www.youtube.com/watch?v=ezS1jWoMmjc"/>
 
 = Installing on OpenCart =
