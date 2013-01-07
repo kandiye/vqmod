@@ -3,6 +3,9 @@
 
 = HISTORY =
 
+===v2.2.2 - 2013-JAN-07 - Jay@jaygilford.com===
+ * Fixed invalid file path logging issue
+
 ===v2.2.1 - 2012-NOV-12 - Jay@jaygilford.com===
  * Fixed invalid file path issue
  * Fixed empty search content issue
