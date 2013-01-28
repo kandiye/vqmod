@@ -68,14 +68,15 @@ vQmod supports a number of parameters:
   * Format: Free form text (Informational)
 
 *modification / file*
-  * This is the name of the file to modify.
-  * Requires attribute "name" as relative filename to the location of the main index.php file (e.g. catalog/controller/product/product.php). Name attribute supports a wildcard ({{{*}}}) character for dynamic path building. Each wildcard is limited to a single directory level.
+  * This is the name of the file to modify
+  * Requires attribute "name" as relative filename to the location of the main index.php file (e.g. catalog/controller/product/product.php). Can be delimited with commas to apply to multiple files at once (2.3.0 +) Name attribute supports a wildcard ({{{*}}}) character for dynamic path building. Each wildcard is limited to a single directory level.
 {{{
      - catalog/view/theme/*/template/product/product.tpl
      - catalog/view/theme/*/*/product/product.tpl
      - etc
 }}}
   * There can be multiple file tags in a single xml file. Each file can have its own set of operations
+  * Optional attribute "path" can be used to prefix file name's to avoid repetition. This is simply prepended to the file names and _no_ validation is attempted (2.3.0 +)
   * Optional attribute "error" set to log|skip|abort
     * _skip_ means it will simply ignore this file.
     * _log_ is the same as skip, but logs the error. *(default)*
@@ -85,10 +86,15 @@ vQmod supports a number of parameters:
 *modification / file / operation*
   * This is the wrapper of the actual operation occurring.
   * There can be multiple operations to the same _file_ tag.
+  * Optional attribute "info" suggested. May be used by vQmod/vQmod Manager for OC in the future but at present isn't used. This is however ideal for making files easier to read
   * Optional attribute "error" set to skip|log|abort
     * _skip_ means all other operations will be applied even if one cannot. There will be no error in the log.
     * _log_ is the same as skip, but logs the error.
     * _abort_ means to log the error and revert to the original source. *(default)*
+
+*modification / file / operation / ignoreif*
+  * This allows for a search to be made on a file. This search works across _multiple lines_ not just single lines. This tag is optional and if the search is found, the operation is skipped
+    * Optional attribute "regex' set to true|false. Format of data inside tag then requires delimiters for regex as it uses the standard preg_match method for php. This attribute defaults to false
 
 *modification / file / operation / search*
   * This is the first required step of the operation.
