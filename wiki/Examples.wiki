@@ -141,7 +141,7 @@ $var2 = 'XYZ';
 		<operation info="After ABC, add 123 if XYZ not in file">
 			<ignoreif><![CDATA[
 			XYZ
-			]]>
+			]]></ignoreif>
 			<search position="after"><![CDATA[
 			$var = 'ABC';
 			]]></search>
