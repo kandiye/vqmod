@@ -15,9 +15,7 @@
  * Added path rewrites to make moved folders easier to manage
  * Multiple files can now be named inside `name=""` attribute, separated by commas
  * `path=""` attribute added to `<file>` tag to allow base prefix for multiple names
- * We now recommend adding a `info=""` attribute for operations to make it
-clearer what they do. This at present is purely optional but we advise adding
-for the benefit of others reading the files
+ * We now recommend adding a `info=""` attribute for operations to make it clearer what the operation does. This at present is purely optional but we advise adding for the benefit of others reading the files
 
 ===v2.2.2 - 2013-JAN-07 - Jay@jaygilford.com===
  * Fixed invalid file path logging issue
