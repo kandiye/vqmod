@@ -3,6 +3,12 @@
 
 = HISTORY =
 
+===v2.3.1 - 2013-FEB-26 - Jay@jaygilford.com===
+ * Fixed bug with path replaces
+ * Fixed bug with realpath never returning false
+ * Added error handling for empty/invalid mods.cache
+ * Added error handling for unknown ignoreif tag bug
+
 ===v2.3.0 - 2013-JAN-28 - Jay@jaygilford.com===
  * Fixed minor bug with mods.cache - now refreshes cache when deleted
  * Added `<ignoreif>` tag to operations
