@@ -4,7 +4,7 @@
 = HISTORY =
 
 
-===v2.3.1 - 2013-FEB-27 - Jay@jaygilford.com===
+===v2.3.2 - 2013-FEB-27 - Jay@jaygilford.com===
  * Fixed bug for mods.cache issue
 
 ===v2.3.1 - 2013-FEB-26 - Jay@jaygilford.com===
