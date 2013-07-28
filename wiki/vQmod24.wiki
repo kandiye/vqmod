@@ -12,9 +12,12 @@ Supposedly static is bit faster as well according to this
 = How do I upgrade? =
 
 The syntax of the vQmod calls in the index.php files has changed. But the built-in upgrade script will automatically upgrade you if using the older syntax so all you have to do is run the usual install url after copying over the new 2.4.x files:
-
 {{{
 http://mysite.com/vqmod/install/
 }}}
+
+Alternatively, you can still follow the manual install procedures here:
+[Install_OpenCart]
+
 
 *There is no change to the xml scripting syntax*
