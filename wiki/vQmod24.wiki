@@ -11,16 +11,8 @@ Supposedly static is bit faster as well according to this
 
 = How do I upgrade? =
 
-The syntax of the vQmod calls in the index.php files has changed. But your existing xml scripts will all work the same.
+The syntax of the vQmod calls in the index.php files has changed. But the built-in upgrade script will automatically upgrade you if using the older syntax so all you have to do is run the usual install url after copying over the new 2.4.x files:
 
-If you are upgrading from 2.3.2 or older, you'll need to do one of the following:
-  * Use the vQmod built-in upgrade script by adding ?u to the end of the install path:
-{{{
-http://mysite.com/vqmod/install/?u
-}}}
-  * Manually change the index files based on the [Install_OpenCart] link in the wiki
-
-If you are not upgrading or you are re-installing vQmod after upgrading OpenCart, then you can just run the normal install line without the ?u
 {{{
 http://mysite.com/vqmod/install/
 }}}
