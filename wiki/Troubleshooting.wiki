@@ -1,5 +1,5 @@
+#summary Troubleshooting common problems#
 #labels troubleshooting
-#Troubleshooting common problems#
 
 = Understanding vQmod Errors =
 
