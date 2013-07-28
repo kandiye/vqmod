@@ -20,7 +20,7 @@ http://mysite.com/vqmod/install/?u
 }}}
   * Manually change the index files based on the [Install_OpenCart] link in the wiki
 
-If you are not upgrading or you are re-installing vQmod based after upgrading OpenCart, then you can just run the normal install line without the ?u
+If you are not upgrading or you are re-installing vQmod after upgrading OpenCart, then you can just run the normal install line without the ?u
 {{{
 http://mysite.com/vqmod/install/
 }}}
