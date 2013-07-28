@@ -14,5 +14,5 @@ This explains the process of upgrading vQmod to a newer version.
 
 That's it!
 
-You do *NOT* need to run the vQmod installer again for upgrade
+You do *NOT* need to run the vQmod installer again for upgrade *UNLESS YOU ARE UPGRADING FROM BEFORE 2.4.0 TO 2.4.0 OR ABOVE*
 You only need to run the installer if you've upgraded your site code and overwrote the index.php and admin/index.php files
