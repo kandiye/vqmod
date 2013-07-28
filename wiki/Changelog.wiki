@@ -4,6 +4,25 @@
 = HISTORY =
 
 
+===v2.4.0 - 2013-JUL-28 - Jay@jaygilford.com===
+ * Added "ibefore" and "iafter" methods for "search" tags "position" attribute
+ * Added case insensitivity for bug with certain windows installations
+ * Added "required" attribute check for "vqmver" tag for incompatibility
+ * Added file path being modified to error log
+ * Added operation index of vQmod file tag to errorlog
+ * Changed error messages to make them more concise
+ * Changed "VQMod" class from instantiated to static, making it easier to integrate
+ * Changed log file name format to make them consecutive ("0_Sun.log", "1_Mon.log" etc)
+ * Changed PHP 5.5+ deprecated "e" regex modifier code to "preg_replace_callback" using "VQMod::_quotePath"
+ * Removed position="all" attribute option
+
+*2.4.0 OpenCart specific changes*
+ * Added seamless upgrade code to installer
+ * Added XML header to "vqmod_opencart.xml"
+ * Changed "vqmod_opencart.xml" to be greatly simplified and cover all php files in "/system/library" and "/system/engine" more consistently
+ * Changed "admin" folder name variable to make it easier to edit in Oinstaller
+ * Changed installer code to use new "VQMod::modCheck()" and "VQMod::bootup()" code
+
 ===v2.3.2 - 2013-FEB-27 - Jay@jaygilford.com===
  * Fixed bug for mods.cache issue
 
