@@ -108,3 +108,6 @@ require_once(VQMod::modCheck(DIR_SYSTEM . 'library/length.php'));
   # Using FTP, verify that there are new "vq" files in the "vqmod/vqcache" folder.
   # If yes, then you are ready to start downloading or creating vQmod scripts.
 Done!
+
+= How to install manually (pre 2.4.0) =
+https://code.google.com/p/vqmod/source/browse/wiki/Install_OpenCart.wiki?r=104
