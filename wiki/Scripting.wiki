@@ -62,6 +62,7 @@ vQmod supports a number of parameters:
 *modification / vqmver*
   * This is the minimum required version of VirtualQMod needed for the script to work.
   * Format: Number and Decimal (1.0.0) (Informational)
+  * A required="true" attribute can be optionally set to disable the script if it doesn't meet the required version (Added from 2.4.0)
 
 *modification / author*
   * This is the author of the mod.
@@ -102,13 +103,15 @@ vQmod supports a number of parameters:
   * Automatically trims whitespace and linebreaks
   * One per _operation_ tag
   * Recommended to use CDATA tags to wrap code.
-  * Required attribute "position" set to before|after|replace|top|bottom|all.
+  * Required attribute "position" set to before|after|replace|top|bottom|~~all~~|ibefore|iafter.
       * _replace_ will replace the data in the _search_ tag with the data in the _add_ tag. (default)
       * _before_ will insert the _add_ data before the _search_ data
       * _after_ will insert the _add_ data after the _search_ data
       * _top_ will insert the _add_ data at the top of the file. The _search_ data is ignored.
       * _bottom_ will insert the _add_ data at the bottom of the file. The _search_ data is ignored.
-      * _all_ will completely replace all the code in the file with the _add_ data. The _search_ data is ignored.
+      * ~~_all_ will completely replace all the code in the file with the _add_ data. The _search_ data is ignored.~~ Deprecated as of 2.4.0
+      * _ibefore_ will insert the code before the search inline instead of the line before
+      * _iafter_ will insert the code afterthe search inline instead of the line before
   *  Optional attribute "offset" to work with the position
       * if the search position is before and offset 3 it will put the _add_ data before the line, 3 lines above the searched line
       * if the search position is after and offset 3 it will put the _add_ data after the line, 3 lines below the searched line
