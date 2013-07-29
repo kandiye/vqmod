@@ -4,6 +4,10 @@
 = HISTORY =
 
 
+===v2.4.1 - 2013-JUL-29 - Jay@jaygilford.com===
+ * Fixed incompatibility with versions lower than 5.3 for "_quotePath" callback
+ * Turned devmode back on
+
 ===v2.4.0 - 2013-JUL-28 - Jay@jaygilford.com===
  * Added "ibefore" and "iafter" methods for "search" tags "position" attribute
  * Added case insensitivity for bug with certain windows installations
