@@ -5,7 +5,7 @@
 
 
 ===v2.4.1 - 2013-JUL-29 - Jay@jaygilford.com===
- * Fixed incompatibility with versions lower than 5.3 for "_quotePath" callback
+ * Fixed incompatibility with PHP versions lower than 5.3 for "_quotePath" callback
  * Turned devmode back on
 
 ===v2.4.0 - 2013-JUL-28 - Jay@jaygilford.com===
