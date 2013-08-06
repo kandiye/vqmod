@@ -10,8 +10,11 @@ First things to set in your mind...
 
 = How to make vQmod Scripts =
 
-*UKSB from the OpenCart forums has created a great vQmod script generator here. This greatly simplifies an already simple creation process.
-  * http://www.opencart-extensions.co.uk/vqgen/
+There are two tools we recommend to help create vQmods if you don't want to edit them manually
+  * UKSB's [http://www.opencart-extensions.co.uk/vqgen/ vQGenerator]
+  * AvanOsch fantastic [http://www.opencart.com/index.php?route=extension/extension/info&extension_id=8247 vQmoderator]
+Both are completely free and open source
+
 
 
 vQmod currently uses an xml formatted parser by default but other parsers can be created in the future as well.
