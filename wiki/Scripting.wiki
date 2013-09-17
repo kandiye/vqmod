@@ -127,6 +127,7 @@ vQmod supports a number of parameters:
   * Optional attribute "regex" for specifying whether or not to search a regex pattern.
       * If true, the _search_ data should be a valid regex pattern
       * Leave out or set to FALSE to use normal string search (default)
+      * Does not apply to `ibefore` and `iafter`
   * Optional attribute "trim" set to true|false
       * true will trim away whitespace and linebreaks.
       * leave out or set to true to trim. (default is true)
