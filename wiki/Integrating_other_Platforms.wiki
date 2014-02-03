@@ -51,6 +51,6 @@ But pages that use a routing call will be:
 
 Places where it is difficult to add vQmod is in platforms that have include calls all over the place throughout multiple files with no common base. This means you need to manually edit each location to add the "modCheck" call before each include. This is fine if your platform is built with vQmod in the core, but if you are modding an existing platform with all these calls, that is a lot of manual editing to make and maintain.
 
-I've tried vQmodding PHPBB3 and GetSimpleCMS. But gave up after a while because their structures just weren't right for vQmod. GetSimple's front end was likely doable, but the admin area was all statically called pages that ended in *.php with no routing. PHPBB had includes all over that were difficult to track and maintain.
+I've tried vQmodding PHPBB3 and GetSimpleCMS. But gave up after a while because their structures just weren't right for vQmod. GetSimple's front end was likely doable, but the admin area was all statically called pages that ended in .php with no routing. PHPBB had includes all over that were difficult to track and maintain.
 
 So each platform is different and may or may not work with vQmod.
