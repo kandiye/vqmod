@@ -1,0 +1,37 @@
+#summary How to integrate vQmod into other platforms.
+
+= Understanding the concept =
+
+If you take a look at the [[About]] page you'll see the basic fundamental approach that vQmod takes for overriding files. Basically anywhere there is an "include" style call, vQmod is inserted in between the call, and the return of that call is then the new adjusted file that gets passed into the include call.
+
+So for example:
+{{{
+  include('path/to/myfile.php');
+}}}
+becomes:
+{{{
+  include(VQMod::modCheck('path/to/myfile.php'));
+}}}
+
+  # The modCheck function opens the original file
+  # The file is altered with the search/replace information
+  # The file is saved with a new name in the vqcache folder, leaving the original file untouched
+  # The new file path is then returned from the function and substituted into the include() call.
+
+
+= Integration =
+
+Now that the concept has been explained, you need to determine if your platform is able to be integrated with vQmod. What makes OpenCart so easy to vQmod is that most include() calls are done in a few common places. 
+
+First off, let's talk about index.php as it is the first file loaded in any platform. This file CANNOT be vQmodded because it is first in the chain. Something has to load vQmod so you can't put the cart before the horse. So in OpenCart, this file gets adjusted manually. You can see these steps in the [[Install_OpenCart]] link in the wiki. Ignore the auto-installer as that is a separate piece unrelated to vQmod itself.
+
+In OpenCart
+
+ & startup.php both load the static libraries right on the first page load. Then the engine files are loaded. All libraries area loaded immediately, even before use. This can be frowned upon because it essentially means that libraries are loaded that may not be used, but with OpenCart, they will likely be used anyway so it just makes it easier for vQmod. 
+
+An alternative to loading everything upfront would be to use an [[http://www.php.net/manual/en/language.oop5.autoload.php Autoload]] method. This would also make things easily vQmoddable because you could add vQmod into the custom autoload function.
+
+Either way, OpenCart keeps all its loading into a few common "controller" engine files and all other files are subclassed from this. This means all calls go through this common point and vQmod can be added at these few checkpoints.
+
+= Where it gets tricky =
+Places where it is difficult to add vQmod is in platforms that have include calls all over the place throughout multiple files with no common base. This means you need to
