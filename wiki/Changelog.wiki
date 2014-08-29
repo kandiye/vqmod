@@ -3,6 +3,25 @@
 
 = HISTORY =
 
+===v2.5.0 - 2014-AUG-29 - Jay@jaygilford.com===
+ * Added caching of checked files to increase performance
+ * Added error details of invalid XML files
+ * Added negative offset for REPLACE position to remove lines before matched line instead of only after
+ * Added `<search>` and `<add>` check to ensure present in each `<operation>`
+ * Added second parameter to `modCheck` to allow specifying the Operations file path for a different source file
+ * Changed `$_replaces` to `$replaces` in VQMod object to adhere to naming convention for public property
+ * Change to `file()` method to increase performance
+ * Changed regex path matching  to increase performance
+ * Changed minor pieces of code to increase performance
+ * Changed file_put_contents to lock files while saving ( bug fix for https://code.google.com/p/vqmod/issues/detail?id=167 )
+ * Changed .htaccess security method to hopefully fix some servers having 500 ISE messages from Options -Indexes
+ * Changed vqmod.php (Formatting cleanup)
+ * Changed readme.txt files
+
+*2.5.0 OpenCart specific changes*
+ * Added attempted fix for weird installer bug ( https://code.google.com/p/vqmod/issues/detail?id=145 )
+ * Added `admin/controller/extension/*.php` files to core vqmod_opencart.xml
+ * Changed vqmod_opencart.xml to allow OC 2.0 integration
 
 ===v2.4.1 - 2013-JUL-29 - Jay@jaygilford.com===
  * Fixed incompatibility with PHP versions lower than 5.3 for "_quotePath" callback
