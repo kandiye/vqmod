@@ -1,5 +1,4 @@
 #summary Explains the script format
-#labels Featured
 
 = The Golden Rules =
 First things to set in your mind...
