@@ -1,5 +1,5 @@
 #summary vQmod Change Log
-#labels Featured,Changelog,History
+#labels Changelog,History
 
 = HISTORY =
 
