@@ -1,5 +1,4 @@
 #summary What is vQmod?
-#labels Featured
 
 = What is vQmod? =
 
