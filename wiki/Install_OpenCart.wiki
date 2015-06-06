@@ -1,2 +1,2 @@
 #labels install,opencart,vqmod
-We've moved to github. This page has moved [https://github.com/vqmod/vqmod/wiki/Installing-vQmod-on-OpenCart here]
+==We've moved to github. This page has moved [https://github.com/vqmod/vqmod/wiki/Installing-vQmod-on-OpenCart here]==
