@@ -1,0 +1,1 @@
+## We've moved to github. This page has moved [here](https://github.com/vqmod/vqmod/wiki/Changelog) ##
